@@ -1,0 +1,52 @@
+{
+  "browser": "Google Chrome via Playwright (fresh headless context)",
+  "frontend": "http://127.0.0.1:5173/",
+  "account": "dg-browser-1793548203573@example.test",
+  "passedSteps": [
+    "registration",
+    "sample load/profile",
+    "data explorer",
+    "analysis/charts",
+    "finding evidence",
+    "cleaning",
+    "file upload",
+    "dataset comparison",
+    "ML baseline",
+    "CSV/PDF downloads",
+    "logout/login"
+  ],
+  "screenshots": [
+    "01-registration-login.png",
+    "02-dataset-upload.png",
+    "03-main-dashboard.png",
+    "04-dataset-profiling.png",
+    "05-detection-findings.png",
+    "06-problem-details.png",
+    "07-cleaning-studio.png",
+    "08-dataset-comparison.png",
+    "09-model-impact.png",
+    "10-reports.png",
+    "11-mobile-layout.png"
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": [],
+  "expectedErrors": [
+    {
+      "kind": "response",
+      "status": 401,
+      "url": "http://127.0.0.1:8001/api/auth/login"
+    },
+    {
+      "kind": "console",
+      "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    }
+  ],
+  "outputs": {
+    "comparisonSummary": "Shared features\n6\nColumns compared\nExact overlap\n77\nRows repeated across both files\nShifted features\n0\nSignificance and effect thresholds met\nReference records\n81\n81 in comparison file",
+    "csvBytes": 2960,
+    "pdfBytes": 3470,
+    "mobileDocumentWidth": 390
+  }
+}

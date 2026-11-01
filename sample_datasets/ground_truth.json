@@ -1,0 +1,36 @@
+{
+  "customer_quality.csv": {
+    "issues": [
+      "missing annual_spend values",
+      "exact duplicated row",
+      "age outlier at customer_code cust-013",
+      "case/whitespace category variant in segment"
+    ],
+    "notes": "IQR checks identify age as unusual; not necessarily invalid without domain context."
+  },
+  "student_performance.csv": {
+    "issues": [
+      "missing exam_score values",
+      "class imbalance in result if selected as target",
+      "inconsistent capitalization in result"
+    ],
+    "target": "result"
+  },
+  "classification_train.csv": {
+    "issues": [
+      "label noise injected at three known rows",
+      "target_encoded exactly duplicates signal_a + signal_b (potential direct leakage candidate)"
+    ],
+    "label_noise_rows": ["TR009", "TR048", "TR095"],
+    "encoded_feature_formula": "target_encoded = signal_a + signal_b",
+    "target": "label",
+    "split_group": "classification"
+  },
+  "classification_shifted.csv": {
+    "issues": [
+      "feature distribution intentionally shifted relative to classification_train.csv"
+    ],
+    "target": "label",
+    "split_group": "classification"
+  }
+}

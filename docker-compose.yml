@@ -1,0 +1,19 @@
+services:
+  api:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATASETGUARD_MAX_UPLOAD_MB: "50"
+      DATASETGUARD_CORS_ORIGINS: "http://localhost:8080,http://127.0.0.1:8080"
+    volumes:
+      - datasetguard_data:/app/data
+  web:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  datasetguard_data:
